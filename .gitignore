@@ -1,0 +1,32 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editor/OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime logs
+*.log
+
+# Generated image outputs
+output_no_bg/
+output_no_bg_*/
+output_*/
+*_no_bg.png
+*_no_bg_*.png
+*_*x*.png

@@ -1,0 +1,49 @@
+Fuck Photo Background Remover - Help
+
+Usage:
+  fuck ls <input>
+  fuck ls <input> -R
+  fuck bg <input>
+  fuck bg <input> -o <output>
+  fuck bg <width>/<height> <input>
+  fuck <width>/<height> bg <input>
+  fuck bg -f <input>
+  fuck bg -r <input>
+  fuck bg -rf <input>
+  fuck <width>/<height> bg <input> -r
+  fuck <width>/<height> bg <input> -rf
+  fuck <width>/<height> <input>
+  fuck /help
+  fuck /?
+
+Input:
+  File path or directory path.
+  Use `bg` mode for background removal.
+  Resolution token is optional, format: width/height (example: 300/400).
+
+Options:
+  -o, --output
+      Set output file path (single file) or output directory (directory mode).
+
+  -f, --force-png
+      Save as same name with .png extension and keep source file.
+      Example: a.jpg -> a.png (a.jpg remains)
+      If source is already a.png, it will be overwritten with background removed result.
+
+  -rf, --replace-and-remove
+      Save as same name with .png extension and remove source file if source is not .png.
+      Example: a.jpg -> a.png and delete a.jpg
+      If source is already a.png, it will be overwritten and not deleted.
+
+    -r
+      Alias of bg replace mode (same effect as -f in bg mode).
+
+Notes:
+  - `fuck ls` lists detailed image metadata (format, resolution, alpha, size, time).
+  - -f and -rf cannot be used with -o.
+  - -r and -rf cannot appear alone. They must be used with bg mode.
+  - Resolution mode only resizes image and does NOT remove background.
+  - bg + resolution mode is executed by fuck_cli.py using remove_bg.py then resize.py.
+  - Resolution-only mode is implemented in resize.py.
+  - Supported input formats: .png, .jpg, .jpeg, .webp, .bmp
+  - Output format is PNG.
